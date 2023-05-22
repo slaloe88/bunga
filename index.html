@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bunga dengan JavaScript</title>
+    <style>
+        .flower {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .petal {
+            position: absolute;
+            width: 80px;
+            height: 150px;
+            background-color: pink;
+            border-radius: 50%;
+            transform-origin: bottom center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flower">
+        <div class="petal"></div>
+        <div class="petal" style="transform: rotate(60deg);"></div>
+        <div class="petal" style="transform: rotate(120deg);"></div>
+        <div class="petal" style="transform: rotate(180deg);"></div>
+        <div class="petal" style="transform: rotate(240deg);"></div>
+        <div class="petal" style="transform: rotate(300deg);"></div>
+    </div>
+
+    <script>
+        // Kode JavaScript dimulai di sini
+        var petals = document.getElementsByClassName("petal");
+        var angle = 0;
+        var rotationSpeed = 0.1;
+
+        function rotatePetals() {
+            angle += rotationSpeed;
+
+            for (var i = 0; i < petals.length; i++) {
+                var petal = petals[i];
+                petal.style.transform = "rotate(" + angle + "deg)";
+            }
+
+            requestAnimationFrame(rotatePetals);
+        }
+
+        rotatePetals();
+    </script>
+</body>
+</html>
+Dalam contoh di atas, kita menggunakan elemen <div> untuk membuat bunga. Kita menggunakan CSS untuk memberikan tampilan bunga dengan memanfaatkan properti seperti background-color, border-radius, dan transform. Setiap kelopak bunga diwakili oleh elemen <div> dengan kelas petal, dan kita menggunakan properti transform: rotate() untuk memutar kelopak bunga sesuai dengan sudut yang diinginkan.
+
+Di sisi JavaScript, kita menggunakan getElementsByClassName() untuk mendapatkan semua elemen dengan kelas petal. Kemudian, kita menggunakan perulangan untuk mengubah properti transform dari setiap kelopak bunga dengan menambahkan sudut rotasi angle. Kita menggunakan requestAnimationFrame() untuk melakukan animasi rotasi bunga dengan kecepatan rotationSpeed.
+
+Untuk melihat bunga dalam aksi, Anda dapat menyimpan kode di atas dalam file HTML, lalu membukanya melalui browser. Anda akan melihat bunga dengan kelopak yang berputar secara animasi.
+
+Anda dapat mengkustomisasi kode ini dengan menambahkan lebih banyak kelopak, mengubah warna, ukuran, atau mengatur kecepatan rotasi sesuai preferensi Anda.
+
+
+
+
+
+
